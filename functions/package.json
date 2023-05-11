@@ -1,0 +1,10 @@
+{
+	"name": "grid-cms-extension",
+	"description": "GridCMS",
+	"module": "index.js",
+	"type": "module",
+	"dependencies": {
+		"firebase-functions": "^4.2.0"
+	},
+	"private": true
+}
