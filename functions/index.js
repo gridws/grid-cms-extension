@@ -1,13 +1,12 @@
 import functions from 'firebase-functions'
 
-const config = null
+let config = null
 
 export const server = functions.https.onRequest(async (req, res) => {
-	console.log('asodmaosdm')
 	const name = process.env.NAME
-	const login = process.env.LOGIN_METHODS
+	const login = process.env.LOGIN_METHODS.split(',')
 	const projectId = process.env.PROJECT_ID
-	if (!config) config = await fetch(`https://${projectId}.firebaseapp.com/__/firebase/init.js`).then((e) => e.text().split('initializeApp(').pop().slice(0, -2))
+	if (!config) config = await fetch(`https://${projectId}.firebaseapp.com/__/firebase/init.json`).then((e) => e.json())
 
 	const manifest = {
 		name: name,
@@ -47,20 +46,14 @@ export const server = functions.https.onRequest(async (req, res) => {
       <body class="light">
         <div id="cms"></div>
         <noscript>Enable JS to continue.</noscript>
-        <script type="importmap">
-          {
-            "imports": {
-              "grid-cms": "https://esm.run/grid-cms@alpha"
-            }
-          }
-        </script>
+        <script type="importmap">{"imports": { "grid-cms": "https://esm.run/grid-cms@alpha"}}</script>
         <script type="module">
           import { setup } from 'grid-cms'
           setup({
             config: {
-              login: ${login}
+              login: ${JSON.stringify(login)}
             },
-            firebaseConfig: ${config}
+            firebaseConfig: ${JSON.stringify(config)}
           })          
         </script>
       </body>

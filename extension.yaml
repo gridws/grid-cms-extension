@@ -22,8 +22,7 @@ params:
       What should the title be?
     type: string
     default: Admin login
-    required: true
-    immutable: false
+    required: false
 
   - param: LOGIN_METHODS
     type: multiSelect
@@ -31,7 +30,6 @@ params:
     description: >-
       Which login methods should be activated? (Make sure they are also activated in project settigns)
     required: true
-    immutable: false
     options:
       - label: Email + password
         value: password
@@ -46,12 +44,18 @@ params:
       - label: Facebook
         value: facebook
 
+  - param: COLOR
+    label: Highlight color
+    description: >-
+      What color should be used in the UI for highlights and buttons?
+    type: string
+    default: #B4D455
+    required: true
+
   - param: LOCATION
     label: Cloud Functions location
     description: >-
-      Where do you want to deploy the functions created for this extension?
-      For help selecting a location, refer to the [location selection
-      guide](https://firebase.google.com/docs/functions/locations).
+      Where do you want to host the extension? Preferably it should be the same as your Firestore instance.
     type: select
     options:
       - label: Iowa (us-central1)
