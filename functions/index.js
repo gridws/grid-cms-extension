@@ -1,16 +1,24 @@
 import functions from 'firebase-functions'
 
-let config = null
+let firebaseConfig = null
 
 export const server = functions.https.onRequest(async (req, res) => {
-	const name = process.env.NAME
-	const login = process.env.LOGIN_METHODS.split(',')
-	const projectId = process.env.PROJECT_ID
-	if (!config) config = await fetch(`https://${projectId}.firebaseapp.com/__/firebase/init.json`).then((e) => e.json())
+	const { NAME, SCHEMA, COLOR, LOGO, PROJECT_ID } = process.env
+	const LOGIN = process.env.LOGIN_METHODS.split(',')
+	if (!firebaseConfig) firebaseConfig = await fetch(`https://${PROJECT_ID}.firebaseapp.com/__/firebase/init.json`).then((e) => e.json())
+
+	const config = {
+		login: LOGIN,
+		schema: SCHEMA,
+		style: {
+			color: COLOR,
+			logo: LOGO
+		}
+	}
 
 	const manifest = {
-		name: name,
-		short_name: name,
+		name: NAME,
+		short_name: NAME,
 		theme_color: '#ffffff',
 		background_color: '#ffffff',
 		display: 'standalone',
@@ -34,7 +42,7 @@ export const server = functions.https.onRequest(async (req, res) => {
     <html>
       <head>
         <meta charset="utf-8" />
-        <title>${name}</title>
+        <title>${NAME}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#fff" />
         <link rel="manifest" href='data:application/manifest+json,${encodeURIComponent(JSON.stringify(manifest))}' />
@@ -50,10 +58,8 @@ export const server = functions.https.onRequest(async (req, res) => {
         <script type="module">
           import { setup } from 'grid-cms'
           setup({
-            config: {
-              login: ${JSON.stringify(login)}
-            },
-            firebaseConfig: ${JSON.stringify(config)}
+            config: ${JSON.stringify(config)},
+            firebaseConfig: ${JSON.stringify(firebaseConfig)}
           })          
         </script>
       </body>
