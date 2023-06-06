@@ -5,6 +5,10 @@ displayName: GridCMS
 description: Add simple CMS for your project.
 license: Apache-2.0
 sourceUrl: https://github.com/gridws/grid-cms-extension
+billingRequired: true
+externalServices:
+  - name: GridCMS
+    pricingUri: https://cms.grid.ws
 resources:
   - name: server
     type: firebaseextensions.v1beta.function
@@ -104,3 +108,7 @@ params:
         value: australia-southeast1
     required: true
     immutable: true
+lifecycleEvents:
+  onInstall:
+    function: server
+    processingMessage: Render GridCMS for the first time.
