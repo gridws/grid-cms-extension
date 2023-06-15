@@ -108,7 +108,3 @@ params:
         value: australia-southeast1
     required: true
     immutable: true
-lifecycleEvents:
-  onInstall:
-    function: server
-    processingMessage: Render GridCMS for the first time.
