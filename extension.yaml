@@ -1,5 +1,5 @@
 name: grid-cms
-version: 1.0.0
+version: 1.0.1
 specVersion: v1beta
 displayName: GridCMS
 description: Add simple CMS for your project.
