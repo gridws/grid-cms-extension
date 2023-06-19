@@ -1,11 +1,13 @@
 name: grid-cms
-version: 1.0.2
+version: 1.0.3
 specVersion: v1beta
 displayName: GridCMS
 description: Add simple CMS for your project.
 license: Apache-2.0
 sourceUrl: https://github.com/gridws/grid-cms-extension
 billingRequired: true
+icon: icon.png
+tags: [utilities, auth, firestore, storage, cms]
 externalServices:
   - name: GridCMS
     pricingUri: https://cms.grid.ws
