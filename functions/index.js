@@ -54,7 +54,7 @@ export const server = functions.https.onRequest(async (req, res) => {
       <body class="light">
         <div id="cms"></div>
         <noscript>Enable JS to continue.</noscript>
-        <script type="importmap">{"imports": { "grid-cms": "https://esm.run/grid-cms@alpha"}}</script>
+        <script type="importmap">{"imports": { "grid-cms": "https://esm.run/grid-cms@1"}}</script>
         <script type="module">
           import { setup } from 'grid-cms'
           setup({
