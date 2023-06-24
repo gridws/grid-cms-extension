@@ -8,6 +8,8 @@ The schema is stored in Firestore (`_CMS_/schema` as default) and can be modifie
 
 Before installing this extension, make sure that you've [set up a Cloud Firestore database](https://firebase.google.com/docs/firestore/quickstart) in your Firebase project.
 
+You'll also need to [deploy Firebase hosting](https://firebase.google.com/docs/firestore/quickstart), for the auto-load of web SDK to work. This can be done via the Firebase CLI.
+
 #### Billing
 
 To install an extension, your project must be on the [Blaze (pay as you go) plan](https://firebase.google.com/pricing)
