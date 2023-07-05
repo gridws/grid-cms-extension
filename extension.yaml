@@ -1,10 +1,18 @@
-name: cms
-version: 1.0.0
+name: grid-cms
+version: 1.0.4
 specVersion: v1beta
 displayName: GRID/CMS
 description: Add simple CMS for your project.
 license: Apache-2.0
-sourceUrl: https://github.com/gridws/grid-cms-extension
+sourceUrl: https://github.com/gridws/grid-cms-extension/tree/main
+releaseNotesUrl: https://github.com/gridws/grid-cms-extension/tree/main/CHANGELOG.md
+author:
+  authorName: GRID
+  url: https://cms.grid.ws
+contributors:
+  - authorName: Stefan Rasmussen
+    email: stefan@grid.ws
+    url: https://github.com/okydk
 billingRequired: true
 icon: icon.png
 tags: [utilities, auth, firestore, storage, cms]
