@@ -1,5 +1,5 @@
 name: grid-cms
-version: 1.0.4
+version: 1.0.5
 specVersion: v1beta
 displayName: GRID/CMS
 description: Add simple CMS for your project.
@@ -52,6 +52,8 @@ params:
         value: twitter
       - label: Facebook
         value: facebook
+      - label: Microsoft
+        value: microsoft
 
   - param: COLOR
     label: Highlight color
