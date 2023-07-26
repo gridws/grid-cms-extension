@@ -1,14 +1,16 @@
-import functions from 'firebase-functions'
+import { onRequest } from 'firebase-functions/v2/https'
 
 let firebaseConfig = null
 
-export const server = functions.https.onRequest(async (req, res) => {
-	const { NAME, SCHEMA, COLOR, LOGO, PROJECT_ID } = process.env
+export const server = onRequest(async (req, res) => {
+	const { NAME, SCHEMA, COLOR, LOGO, PROJECT_ID, OAUTH_TENANT, OAUTH_DOMAIN } = process.env
 	const LOGIN = process.env.LOGIN_METHODS.split(',')
 	if (!firebaseConfig) firebaseConfig = await fetch(`https://${PROJECT_ID}.firebaseapp.com/__/firebase/init.json`).then((e) => e.json())
 
 	const config = {
 		login: LOGIN,
+		oauth_tenant: OAUTH_TENANT,
+		oauth_domain: OAUTH_DOMAIN,
 		schema: SCHEMA,
 		style: {
 			color: COLOR,
