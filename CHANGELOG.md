@@ -21,3 +21,9 @@
 ## Version 1.0.5
 
 - Added Microsoft as auth provider
+
+## Version 1.0.6
+
+- Upgraded to cloud functions v2
+- Upgraded to node 20
+- Added generic OAuth provider and relevant fields

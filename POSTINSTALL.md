@@ -12,7 +12,7 @@ You can alias the function in your hosting setup for a cleaner look.
 		"rewrites": [
 			{
 				"source": "/admin",
-				"function": "${function:server}"
+				"function": "${function:server.name}"
 			}
 		]
 	}
