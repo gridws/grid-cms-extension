@@ -6,5 +6,8 @@
 	"dependencies": {
 		"firebase-functions": "^4.4.1"
 	},
+	"engines": {
+		"node": "20"
+	},
 	"private": true
 }

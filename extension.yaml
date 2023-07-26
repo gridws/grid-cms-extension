@@ -25,8 +25,6 @@ resources:
     description: The holy gate into the CMS.
     properties:
       location: ${LOCATION}
-      httpsTrigger: {}
-      runtime: 'nodejs20'
 params:
   - param: NAME
     label: Name of your project
