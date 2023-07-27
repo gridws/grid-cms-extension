@@ -26,6 +26,7 @@ resources:
     properties:
       location: ${LOCATION}
       runtime: nodejs20
+      httpsTrigger: {}
 
 params:
   - param: NAME
