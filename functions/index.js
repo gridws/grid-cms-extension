@@ -1,4 +1,4 @@
-import { onRequest } from 'firebase-functions/v2/https'
+import { onRequest } from 'firebase-functions/v1/https'
 
 let firebaseConfig = null
 

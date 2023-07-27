@@ -21,13 +21,11 @@ externalServices:
     pricingUri: https://cms.grid.ws
 resources:
   - name: server
-    type: firebaseextensions.v1beta.v2function
+    type: firebaseextensions.v1beta.function
     description: The holy gate into the CMS.
     properties:
       location: ${LOCATION}
-      buildConfig:
-        httpsTrigger: {}
-        runtime: nodejs20
+      runtime: nodejs20
 
 params:
   - param: NAME
