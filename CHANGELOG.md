@@ -27,3 +27,7 @@
 - Upgraded to cloud functions v2
 - Upgraded to node 20
 - Added generic OAuth provider and relevant fields
+
+## Version 1.1.0
+
+- Use official stable version of GRID/CMS

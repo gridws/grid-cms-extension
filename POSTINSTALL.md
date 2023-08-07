@@ -1,9 +1,9 @@
-# GridCMS is installed!
+# GRID/CMS is installed!
 
 You can test it out right away!
 [LOGIN HERE](${function:server.url})
 
-You can alias the function in your hosting setup for a cleaner look.
+You can alias the function in your hosting setup for a cleaner look using your domain.
 
 ```
 {
@@ -11,7 +11,7 @@ You can alias the function in your hosting setup for a cleaner look.
 	"hosting": {
 		"rewrites": [
 			{
-				"source": "/admin",
+				"source": "/admin**",
 				"function": "${function:server.name}"
 			}
 		]
