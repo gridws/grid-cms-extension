@@ -11,6 +11,8 @@ export const server = onRequest(async (req, res) => {
 		login: LOGIN,
 		oauth_tenant: OAUTH_TENANT,
 		oauth_domain: OAUTH_DOMAIN,
+		start_url: req.path,
+		scope: req.path,
 		schema: SCHEMA,
 		style: {
 			color: COLOR,
@@ -24,18 +26,12 @@ export const server = onRequest(async (req, res) => {
 		theme_color: '#ffffff',
 		background_color: '#ffffff',
 		display: 'standalone',
-		start_url: '/',
-		scope: '/',
 		icons: [
 			{
-				src: '/icons/192.png',
-				type: 'image/png',
-				sizes: '192x192'
-			},
-			{
-				src: '/icons/512.png',
-				type: 'image/png',
-				sizes: '512x512'
+				src: 'https://cdn.jsdelivr.net/npm/grid-cms@1/dist/icon.svg',
+				sizes: '48x48 72x72 96x96 128x128 256x256 512x512',
+				type: 'image/svg+xml',
+				purpose: 'any'
 			}
 		]
 	}
@@ -48,8 +44,6 @@ export const server = onRequest(async (req, res) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#fff" />
         <link rel="manifest" href='data:application/manifest+json,${encodeURIComponent(JSON.stringify(manifest))}' />
-        <link rel="apple-touch-icon" href="icons/512.png" />
-        <link rel="apple-touch-startup-image" href="icons/512.png" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="color-scheme" content="dark light" />
       </head>
