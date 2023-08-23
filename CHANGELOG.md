@@ -31,3 +31,7 @@
 ## Version 1.1.0
 
 - Use official stable version of GRID/CMS
+
+## Version 1.1.1
+
+- Updated icons
