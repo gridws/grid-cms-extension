@@ -21,7 +21,8 @@ export const server = onRequest(async (req, res) => {
 	const manifest = {
 		name: NAME,
 		short_name: NAME,
-		start_url: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
+		start_url: '/',
+		scope: '/',
 		theme_color: '#ffffff',
 		background_color: '#ffffff',
 		display: 'standalone',
