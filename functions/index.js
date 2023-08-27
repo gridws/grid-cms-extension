@@ -7,12 +7,6 @@ export const server = onRequest(async (req, res) => {
 	const LOGIN = process.env.LOGIN_METHODS.split(',')
 	if (!firebaseConfig) firebaseConfig = await fetch(`https://${PROJECT_ID}.firebaseapp.com/__/firebase/init.json`).then((e) => e.json())
 
-	console.log({
-		url: req.url,
-		baseUrl: req.baseUrl,
-		originalUrl: req.originalUrl
-	})
-
 	const config = {
 		login: LOGIN,
 		oauth_tenant: OAUTH_TENANT,
@@ -27,7 +21,7 @@ export const server = onRequest(async (req, res) => {
 	const manifest = {
 		name: NAME,
 		short_name: NAME,
-		start_url: req.url,
+		start_url: `${req.protocol}://${req.get('host')}${req.originalUrl}`,
 		theme_color: '#ffffff',
 		background_color: '#ffffff',
 		display: 'standalone',
