@@ -66,6 +66,21 @@ params:
     description: Only relevant if you selected OAuth as login provider.
     type: string
 
+  - param: APP_CHECK
+    type: multiSelect
+    label: App Check
+    description: Which login methods should be activated? (Make sure they are also activated in project settigns)
+    options:
+      - label: reCAPTCHA
+        value: normal
+      - label: reCAPTCHA Enterprise
+        value: enterprise
+
+  - param: APP_CHECK_KEY
+    label: reCAPTCHA / reCAPTCHA Enterprise Key
+    description: What App Check key should be used? Only relevant if you activated App Check.
+    type: string
+
   - param: COLOR
     label: Highlight color
     description: What color should be used in the UI for highlights and buttons?

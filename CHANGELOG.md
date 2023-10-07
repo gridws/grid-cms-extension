@@ -35,3 +35,7 @@
 ## Version 1.1.1
 
 - Updated manifest
+
+## Version 1.1.2
+
+- Added App Check
