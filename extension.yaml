@@ -67,7 +67,7 @@ params:
     type: string
 
   - param: APP_CHECK
-    type: multiSelect
+    type: select
     label: App Check
     description: Which login methods should be activated? (Make sure they are also activated in project settigns)
     options:
