@@ -72,7 +72,7 @@ params:
     description: Which login methods should be activated? (Make sure they are also activated in project settigns)
     options:
       - label: none
-        value:
+        value: null
       - label: reCAPTCHA
         value: normal
       - label: reCAPTCHA Enterprise
