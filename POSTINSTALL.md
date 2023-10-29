@@ -11,7 +11,7 @@ You can alias the function in your hosting setup for a cleaner look using your d
 	"hosting": {
 		"rewrites": [
 			{
-				"source": "/admin**",
+				"source": "/admin/**",
 				"function": "${function:server.name}"
 			}
 		]
