@@ -71,8 +71,6 @@ params:
     label: App Check
     description: Which login methods should be activated? (Make sure they are also activated in project settigns)
     options:
-      - label: none
-        value: null
       - label: reCAPTCHA
         value: normal
       - label: reCAPTCHA Enterprise
@@ -81,6 +79,11 @@ params:
   - param: APP_CHECK_KEY
     label: reCAPTCHA / reCAPTCHA Enterprise Key
     description: What App Check key should be used? Only relevant if you activated App Check.
+    type: string
+
+  - param: APP_ID
+    label: Firebase Web App ID to use.
+    description: Only required for App Check.
     type: string
 
   - param: COLOR
