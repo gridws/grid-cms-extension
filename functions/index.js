@@ -39,7 +39,7 @@ export const server = onRequest(async (req, res) => {
 		]
 	}
 
-	if (req.path.startsWith('/manifest.json')) {
+	if (req.path.includes('/manifest.json')) {
 		res.json(manifest)
 	} else {
 		res.send(`<!DOCTYPE html>
@@ -49,7 +49,7 @@ export const server = onRequest(async (req, res) => {
 		<title>${NAME}</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="theme-color" content="#fff" />
-		<link rel="manifest" href="/manifest.json" />
+		<link rel="manifest" href="${req.path}manifest.json" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="color-scheme" content="dark light" />
 		</head>
