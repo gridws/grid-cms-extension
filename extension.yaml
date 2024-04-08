@@ -104,6 +104,12 @@ params:
     default: /_CMS_/schema
     required: true
 
+  - param: DATABASE
+    label: Database
+    description: Which database should be used?
+    type: string
+    default: (default)
+
   - param: LOCATION
     label: Cloud Functions location
     description: Where do you want to host the extension? Preferably it should be the same as your Firestore instance.

@@ -3,7 +3,7 @@ import { onRequest } from 'firebase-functions/v1/https'
 let firebaseConfig = null
 
 export const server = onRequest(async (req, res) => {
-	const { NAME, SCHEMA, COLOR, LOGO, PROJECT_ID, OAUTH_TENANT, OAUTH_DOMAIN, APP_CHECK, APP_CHECK_KEY, APP_ID } = process.env
+	const { NAME, SCHEMA, COLOR, LOGO, PROJECT_ID, OAUTH_TENANT, OAUTH_DOMAIN, APP_CHECK, APP_CHECK_KEY, APP_ID, DATABASE } = process.env
 	const LOGIN = process.env.LOGIN_METHODS.split(',')
 	if (!firebaseConfig) firebaseConfig = await fetch(`https://${PROJECT_ID}.firebaseapp.com/__/firebase/init.json`).then((e) => e.json())
 	if (APP_ID) firebaseConfig.appId = APP_ID
@@ -15,6 +15,7 @@ export const server = onRequest(async (req, res) => {
 		app_check: APP_CHECK,
 		app_check_key: APP_CHECK_KEY,
 		schema: SCHEMA,
+		database: DATABASE,
 		style: {
 			color: COLOR,
 			logo: LOGO

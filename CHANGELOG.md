@@ -36,3 +36,7 @@
 
 - Updated manifest
 - Added App Check
+
+## Version 1.2.0
+
+- Allow non default databases
