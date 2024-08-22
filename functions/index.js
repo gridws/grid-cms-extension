@@ -5,7 +5,14 @@ let firebaseConfig = null
 export const server = onRequest(async (req, res) => {
 	const { NAME, SCHEMA, COLOR, LOGO, PROJECT_ID, OAUTH_TENANT, OAUTH_DOMAIN, APP_CHECK, APP_CHECK_KEY, APP_ID, DATABASE } = process.env
 	const LOGIN = process.env.LOGIN_METHODS.split(',')
-	if (!firebaseConfig) firebaseConfig = await fetch(`https://${PROJECT_ID}.firebaseapp.com/__/firebase/init.json`).then((e) => e.json())
+	if (!firebaseConfig)
+		firebaseConfig = await fetch(`https://${PROJECT_ID}.firebaseapp.com/__/firebase/init.json`)
+			.then((e) => e.json())
+			.catch(() => {
+				res.send(
+					'No firebase config found. You might have to deploy hosting for the project or setup an alias for this endpoint. https://cms.grid.ws/config/#hosting'
+				)
+			})
 	if (APP_ID) firebaseConfig.appId = APP_ID
 
 	const config = {

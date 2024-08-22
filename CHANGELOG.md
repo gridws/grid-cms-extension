@@ -40,3 +40,7 @@
 ## Version 1.2.0
 
 - Allow non default databases
+
+## Version 1.2.1
+
+- Add error message on missing config
