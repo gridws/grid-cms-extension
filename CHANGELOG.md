@@ -44,3 +44,7 @@
 ## Version 1.2.1
 
 - Add error message on missing config
+
+## Version 1.2.2
+
+- V2 functions
